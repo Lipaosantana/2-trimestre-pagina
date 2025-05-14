@@ -1,74 +1,24 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Flashcards</title>
+</head>
+<body>
+    <main>
+        <section id="container">
+            <!-- Os cards vão ser gerados aqui -->
+        </section>
+    </main>
 
-/* Corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
+    <footer>
+        <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
+    </footer>
 
-main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    text-align: center;
-    margin: 20px 0;
-}
-
-/* Estilos do container */
-#container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-/* Estilos dos cartões */
-.cartao {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.cartao:hover {
-    transform: scale(1.05);
-}
-
-/* Estilo do conteúdo do cartão */
-.cartao__conteudo {
-    padding: 20px;
-}
-
-.cartao__conteudo h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.cartao__conteudo__pergunta {
-    font-size: 16px;
-    color: #555;
-    cursor: pointer;
-}
-
-.cartao__conteudo__resposta {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-}
+    <!-- Scripts -->
+    <script src="perguntas.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
