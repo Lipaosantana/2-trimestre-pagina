@@ -3,69 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   #container {
-    display:flex ;
-}
-
-.cartao {
-    margin: 1rem 1rem;
-}
-
-<div class="cartao__conteudo__pergunta">
-    <p>O que é Java Script?</p>
-</div>                        
-<div class="cartao__conteudo__resposta">
-    <p>O Java Script é uma linguagem de programação.</p>
-</div>
-
-<div class="cartao__conteudo__pergunta">
-    <p>O que é CSS?</p>
-</div>                        
-<div class="cartao__conteudo__resposta">
-    <p>O CSS é uma linguagem de estilização.</p>
-</div>
-
-.cartao {
-    margin: 1rem 1rem;
-    background-color: aqua;
-    height: 20rem;
-}
-
-<article class="cartao">
-    <div class="cartao__conteudo">
-        <h3> Programação </h3>
-        <div class="cartao__conteudo__pergunta">
-            <p>O que é CSS?</p>
-        </div>                        
-        <div class="cartao__conteudo__resposta">
-            <p>O CSS é uma linguagem de estilização.</p>
-        </div>
-    </div>
-</article>
-
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Perguntas e respostas</title>
+    <title>Ferramenta Interativa de Estudo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <section id="container">
-            <!-- <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Programação</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        <p>O que é JavaScript?</p>
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        <p>O JavaScript é uma linguagem de programação</p>
-                    </div>
-                </div>
-            </article> -->
-        </section>
-    </main>
-    <footer>
-        <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
-    </footer>
-    <script src="app.js"></script>
-    <script src="perguntas.js"></script>
+    <div class="container">
+        <h1>Bem-vindo à Ferramenta Interativa de Estudo</h1>
+        <div id="quiz-container">
+            <p id="question"></p>
+            <button class="answer-btn" onclick="checkAnswer('A')">Resposta A</button>
+            <button class="answer-btn" onclick="checkAnswer('B')">Resposta B</button>
+            <button class="answer-btn" onclick="checkAnswer('C')">Resposta C</button>
+            <button class="answer-btn" onclick="checkAnswer('D')">Resposta D</button>
+        </div>
+        <div id="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
