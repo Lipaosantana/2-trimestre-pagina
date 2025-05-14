@@ -1,24 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramenta Interativa de Estudo</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Bem-vindo à Ferramenta Interativa de Estudo</h1>
-        <div id="quiz-container">
-            <p id="question"></p>
-            <button class="answer-btn" onclick="checkAnswer('A')">Resposta A</button>
-            <button class="answer-btn" onclick="checkAnswer('B')">Resposta B</button>
-            <button class="answer-btn" onclick="checkAnswer('C')">Resposta C</button>
-            <button class="answer-btn" onclick="checkAnswer('D')">Resposta D</button>
-        </div>
-        <div id="feedback"></div>
-    </div>
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilos do container */
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estilos dos cartões */
+.cartao {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cartao:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo do conteúdo do cartão */
+.cartao__conteudo {
+    padding: 20px;
+}
+
+.cartao__conteudo h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cartao__conteudo__pergunta {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.cartao__conteudo__resposta {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}

@@ -1,29 +1,45 @@
-function criaCartao(categoria, pergunta, resposta) {
-    let container = document.getElementById('container')
-    let cartao = document.createElement('article')
-    cartao.className = 'cartao'
+// Selecionar a seção onde os cards serão inseridos
+const container = document.getElementById('container');
 
-    cartao.innerHTML = `
-    <div class="cartao__conteudo">
-    <h3>${categoria}</h3>
-    <div class="cartao__conteudo__pergunta">
-        <p>${pergunta}</p>
-    </div>
-    <div class="cartao__conteudo__resposta">
-        <p>${resposta}</p>
-    </div>
-    </div>
-    `
+// Função para gerar os cards de flashcard
+function gerarFlashcards(perguntas) {
+    perguntas.forEach(pergunta => {
+        const card = document.createElement('article');
+        card.classList.add('cartao');
 
-    let respostaEstaVisivel = false
+        const conteudo = document.createElement('div');
+        conteudo.classList.add('cartao__conteudo');
 
-    function viraCartao() {
-        respostaEstaVisivel = !respostaEstaVisivel
-        cartao.classList.toggle('active', respostaEstaVisivel)
-    }
-    cartao.addEventListener('click', viraCartao)
+        const titulo = document.createElement('h3');
+        titulo.textContent = pergunta.categoria;
 
+        const perguntaDiv = document.createElement('div');
+        perguntaDiv.classList.add('cartao__conteudo__pergunta');
+        perguntaDiv.innerHTML = `<p>${pergunta.pergunta}</p>`;
 
-    container.appendChild(cartao)
+        const respostaDiv = document.createElement('div');
+        respostaDiv.classList.add('cartao__conteudo__resposta');
+        respostaDiv.innerHTML = `<p>${pergunta.resposta}</p>`;
+        respostaDiv.style.display = 'none'; // Inicialmente a resposta está oculta
 
+        // Adicionar os elementos ao card
+        conteudo.appendChild(titulo);
+        conteudo.appendChild(perguntaDiv);
+        conteudo.appendChild(respostaDiv);
+        card.appendChild(conteudo);
+
+        // Adicionar o card ao container
+        container.appendChild(card);
+
+        // Interação ao clicar na pergunta
+        perguntaDiv.addEventListener('click', () => {
+            const resposta = respostaDiv;
+            resposta.style.display = resposta.style.display === 'none' ? 'block' : 'none'; // Alternar visibilidade
+        });
+    });
 }
+
+// Quando a página carregar, gerar os flashcards
+document.addEventListener('DOMContentLoaded', () => {
+    gerarFlashcards(perguntas); // Passa as perguntas do arquivo 'perguntas.js'
+});
